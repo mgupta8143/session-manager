@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { useRouter } from 'next/router'
+const axios = require('axios');
 import styles from "../../styles/Join.module.scss";
 
 const Join = (props) => {
@@ -11,6 +12,7 @@ const Join = (props) => {
         sessionName: ""
     });
 
+
     const handleChange = (event) => {
         setFormData(prevForm => ({
             ...prevForm,
@@ -18,9 +20,17 @@ const Join = (props) => {
         }));
     };
 
-    const handleSubmit = (event) => {
+    const handleSubmit = async (event) => {
         event.preventDefault();
-        console.log(formData);
+        try {
+            const response = await axios.post('http://localhost:3030/create-session', {
+                ...formData,
+                sessionId: sessionId
+            });
+            
+        } catch (error) {
+            console.log(error);
+        }
     };
 
     return (
