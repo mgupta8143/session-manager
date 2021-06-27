@@ -7,27 +7,23 @@ const Join = (props) => {
     const router = useRouter();
     const { sessionId } = router.query;
 
-    const [formData, setFormData] = useState({
-        name: "",
-        sessionName: ""
-    });
-
+    const [name, setName] = useState("");
 
     const handleChange = (event) => {
-        setFormData(prevForm => ({
-            ...prevForm,
-            [event.target.name]: event.target.value
-        }));
+        setName(event.target.value);
     };
 
     const handleSubmit = async (event) => {
         event.preventDefault();
         try {
             const response = await axios.post('http://localhost:3030/create-session', {
-                ...formData,
+                name: name,
                 sessionId: sessionId
             });
-            
+            if (typeof window !== "undefined") localStorage.setItem("session-user-name", name);
+            router.push({
+                pathname: "/session/" + sessionId,
+            });
         } catch (error) {
             console.log(error);
         }
@@ -40,14 +36,7 @@ const Join = (props) => {
                 <input 
                   name="name"
                   type="text"
-                  value={formData.name}
-                  onChange={handleChange}
-                />
-                <label>Session Name</label>
-                <input 
-                  name="sessionName"
-                  type="text"
-                  value={formData.sessionName}
+                  value={name}
                   onChange={handleChange}
                 />
                 <input type="submit" value="Submit"/>
