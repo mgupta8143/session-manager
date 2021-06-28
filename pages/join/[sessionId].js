@@ -9,12 +9,19 @@ const Join = (props) => {
 
     const [name, setName] = useState("");
 
-    // As user types in form data, maintains state of name
+
+    /**
+     * Sets name to form input dynamically
+     * @param {any} event 
+     */
     const handleChange = (event) => {
         setName(event.target.value);
     };
 
-    
+    /**
+     * Creates session, saves name to local storage, and redirects to session page
+     * @param {any} event 
+     */
     const handleSubmit = async (event) => {
         event.preventDefault();
         try {
