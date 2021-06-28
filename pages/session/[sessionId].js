@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import { useRouter } from 'next/router'
 import styles from "../../styles/Session.module.scss";
 
-const ENDPOINT = "http://localhost:3030";
+const ENDPOINT = "https://sessionmanagerbackend.herokuapp.com/";
 
 
 const Session = (props) => {
@@ -68,7 +68,7 @@ const Session = (props) => {
                     })
                 }
             </div>
-            <p className={styles.defaultFont}>{"Invite Link: http://localhost:3000/join/" + userData.sessionId}</p>
+            <p className={styles.defaultFont}>{"Invite Link: https://session-manager.vercel.app/join/" + userData.sessionId}</p>
             <p className={styles.defaultFont}>Current User: {userData.name}</p>
         </div>
     );

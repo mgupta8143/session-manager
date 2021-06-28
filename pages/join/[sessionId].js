@@ -25,7 +25,7 @@ const Join = (props) => {
     const handleSubmit = async (event) => {
         event.preventDefault();
         try {
-            const response = await axios.post('http://localhost:3030/create-session', {
+            const response = await axios.post('https://sessionmanagerbackend.herokuapp.com/create-session', {
                 name: name,
                 sessionId: sessionId
             });
