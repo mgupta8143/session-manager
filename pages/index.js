@@ -9,7 +9,7 @@ export default function Home() {
   return (
     <div className={styles.container}>
       <div className={styles.textWrapper}>
-        <h2>Welcome to Session Manager.</h2>
+        <h2 className={styles.text}>Welcome to Session Manager.</h2>
       </div>
       <div className={styles.buttonWrapper}>
         <Link href={'/join/' + generateRandomId()}>

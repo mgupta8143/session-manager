@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+.sessionContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: 0.5s;
+}
+
+.participantText {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    margin: 1vh 0 1vh 0;
+    padding: 0;
+    font-size: 5vh;
+}
+
+.participantWrapper {
+    border: 1px solid rgb(226, 226, 226);
+    width: 30vw;
+    height: 50vh;
+    padding-left: 5vw;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    box-shadow:  0 5px 10px rgba(154,160,185,.05), 0 15px 40px rgba(166,173,201,.2);
+}
+
+.participantBlock {
+    display: flex;
+    flex-direction: row;
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+    font-family: 'Montserrat', sans-serif;
+    align-items: center;
+}
+
+
+.profileImage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4vh;
+    width: 4vh;
+    height: 4vh;
+    background-color: #4c8bf5;
+    color: white;
+    font-size: 2vh;
+    margin-right: 1vh;
+
+}
+
+.participantName {
+    font-size: 3vh;
+}
+
+.defaultFont {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+}

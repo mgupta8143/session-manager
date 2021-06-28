@@ -9,10 +9,12 @@ const Join = (props) => {
 
     const [name, setName] = useState("");
 
+    // As user types in form data, maintains state of name
     const handleChange = (event) => {
         setName(event.target.value);
     };
 
+    
     const handleSubmit = async (event) => {
         event.preventDefault();
         try {
@@ -32,14 +34,16 @@ const Join = (props) => {
     return (
         <div className={styles.joinContainer}>
             <form className={styles.formContainer} onSubmit={handleSubmit}>
-                <label>Name</label>
+                <label className={styles.name}>Enter Name</label>
                 <input 
+                  className={styles.input}
                   name="name"
                   type="text"
                   value={name}
                   onChange={handleChange}
+                  required
                 />
-                <input type="submit" value="Submit"/>
+                <input type="submit" value="Join Session" className={styles.submit}/>
             </form>
         </div>
     );
